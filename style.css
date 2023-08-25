@@ -1,0 +1,152 @@
+#cards {
+  display: grid;
+  justify-content: center;
+  grid-gap: 16px;
+  grid-template-rows: repeat(2, 210px);
+  grid-template-columns: repeat(6, 140px);
+}
+
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200");
+
+body {
+  background-color: rgb(136, 156, 106);
+}
+
+@-webkit-keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+
+@keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(75, 75, 250, 0.3);
+  border-radius: 3px;
+}
+.center h1 {
+  text-align: center;
+  color: white;
+  font-family: "Source Code Pro", monospace;
+  text-transform: uppercase;
+}
+.card {
+  height: 210px;
+  width: 140px;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+}
+
+.front-image {
+  width: 60px;
+  height: 60px;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.card .front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .back {
+  background-image: url("32f8a2e3-5ffc-4c1a-878c-7d3833b38374.jpg");
+  background-position: center center;
+  background-size: cover;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 1000px) {
+  /* Adjust font sizes */
+  h1 {
+    font-size: 36px;
+  }
+  #cards {
+    grid-template-columns: repeat(3, 140px);
+    grid-template-rows: repeat(4, 210px);
+    grid-gap: 10px;
+  }
+
+  .card {
+    height: 210px;
+    width: 140px;
+  }
+
+  /* Adjust padding and font size for the restart button */
+  .actions button {
+    padding: 10px 20px;
+    font-size: 24px;
+  }
+}
+
+/* <-------------------------------Mobile----------------------------------- */
+
+@media (max-width: 1000px) {
+  
+
+  /* Adjust font sizes */
+  h1 {
+    font-size: 36px;
+  }
+  #cards {
+    grid-template-columns: repeat(3, 140px);
+    grid-template-rows: repeat(4, 210px);
+    grid-gap: 10px;
+  }
+
+  .card {
+    height: 210px;
+    width: 140px;
+  }
+
+  /* Adjust padding and font size for the restart button */
+  .actions button {
+    padding: 10px 20px;
+    font-size: 24px;
+  }
+}
+
